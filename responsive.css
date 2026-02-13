@@ -1,0 +1,897 @@
+/* 响应式设计 */
+
+/* 大屏幕设备 (1200px 及以上) */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+    
+    .carousel {
+        height: 450px;
+    }
+    
+    .quick-nav {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+/* 中等屏幕设备 (992px - 1199px) */
+@media (max-width: 1199px) {
+    .container {
+        max-width: 960px;
+    }
+    
+    .carousel {
+        height: 400px;
+    }
+    
+    .quick-nav {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* 平板设备 (768px - 991px) */
+@media (max-width: 991px) {
+    .container {
+        max-width: 720px;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 60px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 60px);
+        background-color: white;
+        flex-direction: column;
+        padding: 20px;
+        transition: left 0.3s ease;
+        box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-item {
+        margin: 10px 0;
+    }
+    
+    .nav-link {
+        padding: 15px 20px;
+        font-size: 16px;
+    }
+    
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    .mobile-menu-toggle.active span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    
+    .mobile-menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .mobile-menu-toggle.active span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+    
+    .carousel {
+        height: 300px;
+    }
+    
+    .carousel-caption h3 {
+        font-size: 24px;
+    }
+    
+    .quick-nav {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .filter-tabs {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .categories-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .post-detail-actions {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}
+
+/* 手机设备 (576px - 767px) */
+@media (max-width: 767px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .nav-container {
+        padding: 0 15px;
+    }
+    
+    .nav-brand h1 {
+        font-size: 20px;
+    }
+    
+    .nav-actions {
+        gap: 8px;
+    }
+    
+    .login-btn {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+    
+    .carousel {
+        height: 250px;
+        margin-bottom: 20px;
+    }
+    
+    .carousel-caption {
+        padding: 20px;
+    }
+    
+    .carousel-caption h3 {
+        font-size: 20px;
+    }
+    
+    .carousel-caption p {
+        font-size: 14px;
+    }
+    
+    .carousel-control {
+        padding: 8px 12px;
+        font-size: 20px;
+    }
+    
+    .quick-nav {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        margin-bottom: 25px;
+    }
+    
+    .quick-nav-item {
+        padding: 15px;
+    }
+    
+    .quick-nav-icon {
+        font-size: 24px;
+        margin-bottom: 8px;
+    }
+    
+    .quick-nav-item span {
+        font-size: 12px;
+    }
+    
+    .posts-section {
+        padding: 15px;
+    }
+    
+    .section-header h2 {
+        font-size: 18px;
+    }
+    
+    .filter-tab {
+        padding: 4px 8px;
+        font-size: 12px;
+    }
+    
+    .post-item {
+        padding: 15px 0;
+    }
+    
+    .post-item:hover {
+        padding: 15px;
+    }
+    
+    .post-avatar {
+        width: 35px;
+        height: 35px;
+        margin-right: 10px;
+    }
+    
+    .post-title {
+        font-size: 15px;
+    }
+    
+    .post-content {
+        font-size: 13px;
+    }
+    
+    .post-stats {
+        gap: 15px;
+    }
+    
+    .category-card {
+        padding: 20px;
+    }
+    
+    .category-icon {
+        font-size: 36px;
+        margin-bottom: 10px;
+    }
+    
+    .category-name {
+        font-size: 16px;
+    }
+    
+    .category-description {
+        font-size: 13px;
+    }
+    
+    .post-form {
+        padding: 20px;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .form-actions .btn {
+        width: 100%;
+    }
+    
+    .post-detail {
+        padding: 20px;
+    }
+    
+    .post-detail-title {
+        font-size: 20px;
+    }
+    
+    .post-detail-meta {
+        flex-wrap: wrap;
+        gap: 10px;
+        font-size: 12px;
+    }
+    
+    .post-detail-content {
+        font-size: 14px;
+    }
+    
+    .comments-section {
+        padding: 20px;
+    }
+    
+    .comment-item {
+        padding: 15px;
+    }
+    
+    .comment-avatar {
+        width: 28px;
+        height: 28px;
+        font-size: 10px;
+    }
+    
+    .comment-content {
+        font-size: 14px;
+    }
+    
+    .footer {
+        padding: 30px 0 15px;
+        margin-top: 40px;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .footer-section h4 {
+        font-size: 16px;
+    }
+    
+    .footer-section p,
+    .footer-section li {
+        font-size: 14px;
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 20px;
+    }
+    
+    .modal-header {
+        padding: 15px;
+    }
+    
+    .modal-body {
+        padding: 15px;
+    }
+}
+
+/* 超小屏幕设备 (575px 及以下) */
+@media (max-width: 575px) {
+    .container {
+        padding: 0 10px;
+    }
+    
+    .nav-container {
+        padding: 0 10px;
+        height: 50px;
+    }
+    
+    .nav-brand h1 {
+        font-size: 18px;
+    }
+    
+    .nav-menu {
+        top: 50px;
+        height: calc(100vh - 50px);
+    }
+    
+    .main-content {
+        padding-top: 15px;
+    }
+    
+    .carousel {
+        height: 200px;
+        border-radius: 8px;
+    }
+    
+    .carousel-caption {
+        padding: 15px;
+    }
+    
+    .carousel-caption h3 {
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+    
+    .carousel-caption p {
+        font-size: 12px;
+    }
+    
+    .carousel-control {
+        padding: 6px 10px;
+        font-size: 18px;
+    }
+    
+    .quick-nav {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        margin-bottom: 20px;
+    }
+    
+    .quick-nav-item {
+        padding: 12px;
+        border-radius: 8px;
+    }
+    
+    .quick-nav-icon {
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
+    
+    .quick-nav-item span {
+        font-size: 11px;
+    }
+    
+    .posts-section {
+        padding: 12px;
+        border-radius: 8px;
+    }
+    
+    .section-header {
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+    }
+    
+    .section-header h2 {
+        font-size: 16px;
+    }
+    
+    .filter-tabs {
+        gap: 5px;
+    }
+    
+    .filter-tab {
+        padding: 3px 6px;
+        font-size: 11px;
+        border-radius: 15px;
+    }
+    
+    .post-item {
+        padding: 12px 0;
+    }
+    
+    .post-item:hover {
+        padding: 12px;
+        margin: 0 -12px;
+    }
+    
+    .post-avatar {
+        width: 30px;
+        height: 30px;
+        margin-right: 8px;
+        font-size: 12px;
+    }
+    
+    .post-author {
+        font-size: 14px;
+    }
+    
+    .post-time {
+        font-size: 10px;
+    }
+    
+    .post-category {
+        font-size: 10px;
+        padding: 2px 6px;
+    }
+    
+    .post-title {
+        font-size: 14px;
+        margin-bottom: 6px;
+    }
+    
+    .post-content {
+        font-size: 12px;
+        margin-bottom: 8px;
+        -webkit-line-clamp: 2;
+    }
+    
+    .post-stats {
+        gap: 12px;
+        font-size: 10px;
+    }
+    
+    .load-more {
+        padding: 15px 0;
+    }
+    
+    .btn {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+    
+    .categories-grid {
+        gap: 15px;
+        margin-top: 15px;
+    }
+    
+    .category-card {
+        padding: 15px;
+        border-radius: 8px;
+    }
+    
+    .category-icon {
+        font-size: 32px;
+        margin-bottom: 8px;
+    }
+    
+    .category-name {
+        font-size: 15px;
+        margin-bottom: 6px;
+    }
+    
+    .category-description {
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+    
+    .category-stats {
+        gap: 15px;
+        font-size: 10px;
+    }
+    
+    .hot-topics {
+        gap: 15px;
+        margin-top: 15px;
+    }
+    
+    .hot-topic-item {
+        padding: 15px;
+        border-radius: 8px;
+    }
+    
+    .hot-topic-rank {
+        width: 25px;
+        height: 25px;
+        margin-right: 10px;
+        font-size: 12px;
+    }
+    
+    .hot-topic-title {
+        font-size: 14px;
+    }
+    
+    .hot-topic-stats {
+        gap: 15px;
+        font-size: 10px;
+    }
+    
+    .post-form {
+        padding: 15px;
+        border-radius: 8px;
+    }
+    
+    .form-group {
+        margin-bottom: 15px;
+    }
+    
+    .form-group label {
+        font-size: 14px;
+        margin-bottom: 6px;
+    }
+    
+    .form-control {
+        padding: 10px;
+        font-size: 13px;
+    }
+    
+    .form-actions {
+        gap: 8px;
+    }
+    
+    .post-detail {
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
+    
+    .back-btn {
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+    
+    .post-detail-title {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    
+    .post-detail-meta {
+        margin-bottom: 15px;
+    }
+    
+    .post-detail-content {
+        font-size: 13px;
+        margin-bottom: 15px;
+    }
+    
+    .post-detail-actions {
+        padding-top: 15px;
+        gap: 15px;
+    }
+    
+    .action-btn {
+        font-size: 12px;
+    }
+    
+    .comments-section {
+        padding: 15px;
+        border-radius: 8px;
+    }
+    
+    .comments-section h3 {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+    
+    .comment-form textarea {
+        padding: 10px;
+        font-size: 13px;
+        min-height: 60px;
+        margin-bottom: 8px;
+    }
+    
+    .comment-form .btn {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+    
+    .comments-list {
+        gap: 15px;
+    }
+    
+    .comment-item {
+        padding: 12px;
+        border-radius: 6px;
+    }
+    
+    .comment-header {
+        margin-bottom: 8px;
+    }
+    
+    .comment-avatar {
+        width: 24px;
+        height: 24px;
+        margin-right: 8px;
+        font-size: 9px;
+    }
+    
+    .comment-author {
+        font-size: 13px;
+        margin-right: 8px;
+    }
+    
+    .comment-time {
+        font-size: 10px;
+    }
+    
+    .comment-content {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+    
+    .comment-actions {
+        margin-top: 8px;
+        gap: 10px;
+    }
+    
+    .comment-action {
+        font-size: 10px;
+    }
+    
+    .footer {
+        padding: 20px 0 10px;
+        margin-top: 30px;
+    }
+    
+    .footer-content {
+        gap: 20px;
+    }
+    
+    .footer-section h4 {
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
+    
+    .footer-section p,
+    .footer-section li {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+    
+    .footer-bottom {
+        padding-top: 15px;
+        font-size: 11px;
+    }
+    
+    .modal-content {
+        width: 90%;
+        margin: 15px;
+        border-radius: 8px;
+    }
+    
+    .modal-header {
+        padding: 12px;
+    }
+    
+    .modal-header h3 {
+        font-size: 16px;
+    }
+    
+    .modal-close {
+        font-size: 20px;
+    }
+    
+    .modal-body {
+        padding: 12px;
+    }
+    
+    .form-group label {
+        font-size: 13px;
+    }
+    
+    .form-control {
+        padding: 8px;
+        font-size: 12px;
+    }
+}
+
+/* 横屏模式优化 */
+@media (max-height: 500px) and (orientation: landscape) {
+    .carousel {
+        height: 180px;
+    }
+    
+    .carousel-caption {
+        padding: 10px;
+    }
+    
+    .carousel-caption h3 {
+        font-size: 16px;
+    }
+    
+    .carousel-caption p {
+        display: none;
+    }
+    
+    .quick-nav {
+        grid-template-columns: repeat(6, 1fr);
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+    
+    .quick-nav-item {
+        padding: 10px;
+    }
+    
+    .quick-nav-icon {
+        font-size: 18px;
+        margin-bottom: 3px;
+    }
+    
+    .quick-nav-item span {
+        font-size: 10px;
+    }
+}
+
+/* 高分辨率屏幕优化 */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .carousel-item img {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+    
+    .post-avatar,
+    .comment-avatar {
+        image-rendering: -webkit-optimize-contrast;
+    }
+}
+
+/* 打印样式 */
+@media print {
+    .header,
+    .nav-actions,
+    .search-overlay,
+    .carousel,
+    .quick-nav,
+    .filter-tabs,
+    .load-more,
+    .post-detail-actions,
+    .comment-form,
+    .comment-actions,
+    .footer {
+        display: none !important;
+    }
+    
+    .main-content {
+        padding-top: 0;
+    }
+    
+    .post-detail,
+    .comments-section {
+        box-shadow: none;
+        border: 1px solid #ddd;
+        break-inside: avoid;
+    }
+    
+    body {
+        background: white;
+        color: black;
+        font-size: 12pt;
+    }
+    
+    .post-detail-title {
+        font-size: 18pt;
+    }
+    
+    .post-detail-content,
+    .comment-content {
+        font-size: 11pt;
+        line-height: 1.4;
+    }
+}
+
+/* 动画性能优化 */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .carousel-inner {
+        transition: none;
+    }
+    
+    .carousel-item img {
+        transition: none;
+    }
+}
+
+/* 深色模式支持 */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1a1a1a;
+        color: #e0e0e0;
+    }
+    
+    .header {
+        background-color: #2d2d2d;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+    
+    .nav-brand h1 {
+        color: #4dabf7;
+    }
+    
+    .nav-link {
+        color: #b0b0b0;
+    }
+    
+    .nav-link:hover,
+    .nav-link.active {
+        color: #4dabf7;
+        background-color: #1e3a5f;
+    }
+    
+    .posts-section,
+    .post-detail,
+    .comments-section,
+    .category-card,
+    .hot-topic-item,
+    .post-form,
+    .modal-content {
+        background-color: #2d2d2d;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    
+    .post-item:hover {
+        background-color: #1e3a5f;
+    }
+    
+    .post-title,
+    .post-detail-title,
+    .category-name,
+    .hot-topic-title {
+        color: #e0e0e0;
+    }
+    
+    .form-control {
+        background-color: #1a1a1a;
+        border-color: #4d4d4d;
+        color: #e0e0e0;
+    }
+    
+    .form-control:focus {
+        border-color: #4dabf7;
+        box-shadow: 0 0 0 3px rgba(77,171,247,0.1);
+    }
+    
+    .footer {
+        background-color: #1a1a1a;
+    }
+    
+    .section-header {
+        border-bottom-color: #4d4d4d;
+    }
+    
+    .post-item,
+    .comment-item {
+        border-bottom-color: #4d4d4d;
+    }
+    
+    .post-detail-actions {
+        border-top-color: #4d4d4d;
+    }
+    
+    .modal-header {
+        border-bottom-color: #4d4d4d;
+    }
+}

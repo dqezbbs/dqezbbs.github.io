@@ -1,1 +1,271 @@
-测试文本
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>校园论坛 - Campus Forum</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <h1>校园论坛</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link active" data-page="home">首页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#categories" class="nav-link" data-page="categories">板块</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#hot" class="nav-link" data-page="hot">热门</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#create" class="nav-link" data-page="create">发帖</a>
+                    </li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="btn btn-outline search-btn" id="searchBtn">
+                        <span class="icon">🔍</span>
+                    </button>
+                    <button class="btn btn-primary login-btn" id="loginBtn">登录</button>
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 搜索栏 -->
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-container">
+            <input type="text" class="search-input" id="searchInput" placeholder="搜索帖子、用户或话题...">
+            <button class="search-close" id="searchClose">✕</button>
+        </div>
+    </div>
+
+    <!-- 主要内容区域 -->
+    <main class="main-content">
+        <!-- 首页 -->
+        <section id="homePage" class="page active">
+            <div class="container">
+                <!-- 轮播图 -->
+                <div class="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="https://picsum.photos/seed/campus1/800/400.jpg" alt="校园活动">
+                            <div class="carousel-caption">
+                                <h3>欢迎来到校园论坛</h3>
+                                <p>分享你的校园生活</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://picsum.photos/seed/campus2/800/400.jpg" alt="学术交流">
+                            <div class="carousel-caption">
+                                <h3>学术交流区</h3>
+                                <p>探讨学术问题，分享学习经验</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://picsum.photos/seed/campus3/800/400.jpg" alt="社团活动">
+                            <div class="carousel-caption">
+                                <h3>社团活动</h3>
+                                <p>发现有趣的社团活动</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control prev" id="carouselPrev">‹</button>
+                    <button class="carousel-control next" id="carouselNext">›</button>
+                </div>
+
+                <!-- 快速导航 -->
+                <div class="quick-nav">
+                    <div class="quick-nav-item" data-category="academic">
+                        <div class="quick-nav-icon">📚</div>
+                        <span>学术交流</span>
+                    </div>
+                    <div class="quick-nav-item" data-category="life">
+                        <div class="quick-nav-icon">🏠</div>
+                        <span>校园生活</span>
+                    </div>
+                    <div class="quick-nav-item" data-category="club">
+                        <div class="quick-nav-icon">🎯</div>
+                        <span>社团活动</span>
+                    </div>
+                    <div class="quick-nav-item" data-category="job">
+                        <div class="quick-nav-icon">💼</div>
+                        <span>实习就业</span>
+                    </div>
+                    <div class="quick-nav-item" data-category="emotion">
+                        <div class="quick-nav-icon">💝</div>
+                        <span>情感交流</span>
+                    </div>
+                    <div class="quick-nav-item" data-category="trade">
+                        <div class="quick-nav-icon">🛍️</div>
+                        <span>二手交易</span>
+                    </div>
+                </div>
+
+                <!-- 最新帖子列表 -->
+                <div class="posts-section">
+                    <div class="section-header">
+                        <h2>最新帖子</h2>
+                        <div class="filter-tabs">
+                            <button class="filter-tab active" data-filter="latest">最新</button>
+                            <button class="filter-tab" data-filter="hot">热门</button>
+                            <button class="filter-tab" data-filter="essence">精华</button>
+                        </div>
+                    </div>
+                    <div class="posts-list" id="postsList">
+                        <!-- 帖子将通过JavaScript动态加载 -->
+                    </div>
+                    <div class="load-more">
+                        <button class="btn btn-outline" id="loadMoreBtn">加载更多</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 板块页面 -->
+        <section id="categoriesPage" class="page">
+            <div class="container">
+                <h2>论坛板块</h2>
+                <div class="categories-grid" id="categoriesGrid">
+                    <!-- 板块将通过JavaScript动态加载 -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 热门页面 -->
+        <section id="hotPage" class="page">
+            <div class="container">
+                <h2>热门话题</h2>
+                <div class="hot-topics" id="hotTopics">
+                    <!-- 热门话题将通过JavaScript动态加载 -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 发帖页面 -->
+        <section id="createPage" class="page">
+            <div class="container">
+                <h2>发布新帖</h2>
+                <form class="post-form" id="postForm">
+                    <div class="form-group">
+                        <label for="postCategory">选择板块</label>
+                        <select id="postCategory" class="form-control" required>
+                            <option value="">请选择板块</option>
+                            <option value="academic">学术交流</option>
+                            <option value="life">校园生活</option>
+                            <option value="club">社团活动</option>
+                            <option value="job">实习就业</option>
+                            <option value="emotion">情感交流</option>
+                            <option value="trade">二手交易</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="postTitle">标题</label>
+                        <input type="text" id="postTitle" class="form-control" placeholder="请输入帖子标题" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="postContent">内容</label>
+                        <textarea id="postContent" class="form-control" rows="10" placeholder="请输入帖子内容" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="postTags">标签</label>
+                        <input type="text" id="postTags" class="form-control" placeholder="请输入标签，用逗号分隔">
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-outline" id="cancelPost">取消</button>
+                        <button type="submit" class="btn btn-primary">发布</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- 帖子详情页面 -->
+        <section id="postDetailPage" class="page">
+            <div class="container">
+                <button class="back-btn" id="backBtn">← 返回</button>
+                <div class="post-detail" id="postDetail">
+                    <!-- 帖子详情将通过JavaScript动态加载 -->
+                </div>
+                <div class="comments-section">
+                    <h3>评论</h3>
+                    <div class="comment-form">
+                        <textarea id="commentContent" class="form-control" placeholder="写下你的评论..."></textarea>
+                        <button class="btn btn-primary" id="submitComment">发表评论</button>
+                    </div>
+                    <div class="comments-list" id="commentsList">
+                        <!-- 评论将通过JavaScript动态加载 -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>关于我们</h4>
+                    <p>校园论坛是为大学生打造的交流平台，致力于促进校园内的信息分享和交流。</p>
+                </div>
+                <div class="footer-section">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#home">首页</a></li>
+                        <li><a href="#categories">板块</a></li>
+                        <li><a href="#hot">热门</a></li>
+                        <li><a href="#create">发帖</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>联系我们</h4>
+                    <p>邮箱: forum@campus.edu</p>
+                    <p>电话: 123-456-7890</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 校园论坛. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 登录模态框 -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>登录</h3>
+                <button class="modal-close" id="loginModalClose">✕</button>
+            </div>
+            <div class="modal-body">
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="username">用户名</label>
+                        <input type="text" id="username" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">密码</label>
+                        <input type="password" id="password" class="form-control" required>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">登录</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
